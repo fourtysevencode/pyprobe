@@ -1,6 +1,6 @@
 import socket
 
-target = "192.168.1.17"
+target = "192.168.1.17" # ESP32 with a webpage hosted on port 80
 
 def scan_port(target, port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
