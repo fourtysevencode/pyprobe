@@ -1,2 +1,2 @@
 # Pyprobe
-> A network probe and port scan cli and python package.
+> A Python package and CLI for network probing, port scanning, and service discovery.
