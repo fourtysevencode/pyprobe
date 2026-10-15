@@ -1,20 +1,25 @@
 from services.scan_port import scan_port
 from services.find_service import find_service_from_port
 from services.commonly_used_ports import ports
+import asyncio
 import pandas as pd
 
-def scan(IP):
-    open_ports = []
-    for port in ports:
-        res = scan_port(IP, port)
-        if res is not None:
-            open_ports.append(res)
+async def scan(IP):
+    print(f"Starting async port scan against {IP}")
 
-    services = [find_service_from_port(IP, port) for port in open_ports]
+    tasks = [asyncio.to_thread(scan_port,IP,port) for port in ports] # list of tasks to be run asynchronously
+    result = await asyncio.gather(*tasks) # fire all tasks
 
-    result = dict(zip(open_ports, services))
+    open_ports = [port for port in result if port is not None]
+
+    service_tasks = [asyncio.to_thread(find_service_from_port, IP, port) for port in open_ports]
+    services = await asyncio.gather(*service_tasks)
 
     return pd.DataFrame({"Port":open_ports, "Service":services})
 
-print(scan("127.0.0.1"))
+def main():
+    df = asyncio.run(scan("scanme.nmap.org"))
+    print(df)
 
+if __name__ == "__main__":
+    main()
