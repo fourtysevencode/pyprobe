@@ -1,7 +1,6 @@
 import socket
 from commonly_used_ports import ports
 
-
 target = "127.0.0.1" # ESP32 with a webpage hosted on port 80
 
 def scan_port(target, port):
