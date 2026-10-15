@@ -16,5 +16,5 @@ def scan(IP):
 
     return pd.DataFrame({"Port":open_ports, "Service":services})
 
-print(scan("fourtysevencode.hackclub.app"))
+print(scan("127.0.0.1"))
 

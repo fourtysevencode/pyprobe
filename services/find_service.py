@@ -7,11 +7,13 @@ IP = "127.0.0.1"
 def find_service_from_port(IP, PORT):
     if PORT in popular_http_ports:
         try:
-            res = requests.get(f"http://{IP}:{PORT}")
+            res = requests.get(f"http://{IP}:{PORT}", timeout = 3)
+            server_name = res.headers.get("Server", "Unknown HTTP server")
+            content_type = res.headers.get("Content-Type", "").split(";")[0]
             
-            return f"Likely HTTP {res.text.split()[1]}"
+            return f"{server_name} Content: {content_type}"
         except Exception as e:
-            return f"unknown (maybe HTTP?) \nException: {e}"
+            return f"HTTP port open but failed to reply. \nException: {e}"
     else:
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
