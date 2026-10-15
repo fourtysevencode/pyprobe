@@ -9,7 +9,7 @@ def scan_port(target, port):
         result = sock.connect_ex((target, port))
 
     if result == 0:
-        print(f"{port}: Open, status code {result}")
+        print(f"{port}: Open")
         return port
 
     return None

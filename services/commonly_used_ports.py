@@ -9,3 +9,17 @@ popular_http_ports = [
     8443,    # HTTPS alternative / Java admin consoles
     8888,    # Jupyter Notebook default
 ]
+# Common Port to Service Mapping
+popular_services_on_port = {
+    21: "FTP (File Transfer Protocol)",
+    22: "SSH (Secure Shell)",
+    23: "Telnet",
+    25: "SMTP (Simple Mail Transfer Protocol)",
+    53: "DNS (Domain Name System)",
+    80: "HTTP (Hypertext Transfer Protocol)",
+    443: "HTTPS (HTTP Secure / TLS)",
+    6379: "Redis In-Memory Database",
+    3389: "Remote Desktop Protocol (RDP)",
+    5432: "PostgreSQL Database Server",
+    9929: "Nping Echo Protocol"
+}
