@@ -1,11 +1,13 @@
 from services.scan_port import scan_port
-from services.find_service_new import find_service_from_port
+from services.find_service import find_service_from_port
 from services.commonly_used_ports import ports
 from services.arg_parssr import get_target
 import asyncio
 import pandas as pd
 import time
 from datetime import datetime
+from rich import print
+from rich_tools import df_to_table
 
 ascii_art = r"""
  ________  ___    ___ ________  ________  ________  ________  _______      
@@ -31,7 +33,7 @@ async def scan(IP):
 
     service_tasks = [asyncio.to_thread(find_service_from_port, IP, port) for port in open_ports]
     services = await asyncio.gather(*service_tasks)
-
+    
     return pd.DataFrame({"Port":open_ports, "Service":services})
 
 def main():
@@ -39,11 +41,12 @@ def main():
 
     df = asyncio.run(scan(get_target()))
     total_open_ports = df.shape[0]
+    table = df_to_table(df)
 
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
 
-    print(df.to_string(index=False))
+    print(table)
     print(f"\nNumber of ports open: {total_open_ports}")
     print(f"Completed in {elapsed_time:.3f}s\n")
 
