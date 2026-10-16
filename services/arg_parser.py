@@ -1,6 +1,6 @@
 import argparse
 
-def get_target():
+def get_args():
 
     parser = argparse.ArgumentParser(
         prog = "pyprobe",
@@ -10,6 +10,7 @@ def get_target():
 
     parser.add_argument("target")
 
+    parser.add_argument("-J", "--json", action="store_true",help="export discovered ports to a JSON file in the same directory")
     args = parser.parse_args()
 
-    return args.target
+    return args.target, args.json

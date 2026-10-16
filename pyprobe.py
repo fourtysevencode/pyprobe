@@ -1,12 +1,12 @@
 from services.scan_port import scan_port
 from services.find_service import find_service_from_port
 from services.commonly_used_ports import ports
-from services.arg_parssr import get_target
+from services.arg_parser import get_args
 import asyncio
 import pandas as pd
 import time
 from datetime import datetime
-from rich import print
+from rich import print as rich_print
 from rich_tools import df_to_table
 
 ascii_art = r"""
@@ -21,10 +21,10 @@ ascii_art = r"""
 """
 
 async def scan(IP):
-    print(ascii_art)
+    rich_print(ascii_art)
     current_clock_time = datetime.now().strftime("%H:%M:%S")
 
-    print(f"Starting async port scan against {IP} at {current_clock_time}\n")
+    rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time}\n")
 
     tasks = [asyncio.to_thread(scan_port,IP,port) for port in ports] # list of tasks to be run asynchronously
     result = await asyncio.gather(*tasks) # fire all tasks
@@ -39,16 +39,25 @@ async def scan(IP):
 def main():
     start_time = time.perf_counter()
 
-    df = asyncio.run(scan(get_target()))
-    total_open_ports = df.shape[0]
+
+    target, json_export = get_args()
+
+    df = asyncio.run(scan(target))
+    
     table = df_to_table(df)
+    total_open_ports = df.shape[0]
 
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
 
-    print(table)
+    rich_print(table)
     print(f"\nNumber of ports open: {total_open_ports}")
     print(f"Completed in {elapsed_time:.3f}s\n")
 
-if __name__ == "__main__":
+    if json_export:
+        file_name = f"PYPROBE-{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.json"
+        df.to_json(file_name, indent=4)
+        rich_print(f"Saved to [green]{file_name}[/green]")
+
+if __name__ == "__main__":  
     main()

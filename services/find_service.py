@@ -40,7 +40,7 @@ def find_service_from_port(IP, PORT):
                 "Content-Type", ""
             ).split(";")[0]
 
-            return f"HTTP | {server} | Content-Type: {content_type}"
+            return f"HTTP | {server}" # | Content-Type: {content_type}
 
         except requests.RequestException:
             pass
