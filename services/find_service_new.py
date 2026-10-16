@@ -21,6 +21,9 @@ def find_service_from_port(IP, PORT):
             except socket.timeout:
                 banner = b""
 
+        if banner.startswith(b"220") and b"FTP" in banner.upper():
+            return "Likely FTP"
+        
         if banner:
             for signature, service in service_signatures.items():
                 if signature in banner:
@@ -44,7 +47,7 @@ def find_service_from_port(IP, PORT):
 
         # Use the port number as a weak clue
         if PORT in popular_services_on_port:
-            return f"Likely {popular_services_on_port[PORT]}"
+            return f"Likely: {popular_services_on_port[PORT]}"
 
         return "Open port, but no banner received"
 

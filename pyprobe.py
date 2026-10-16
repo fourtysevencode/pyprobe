@@ -45,7 +45,7 @@ def main():
 
     print(df.to_string(index=False))
     print(f"\nNumber of ports open: {total_open_ports}")
-    print(f"Scan took {elapsed_time:.3f}s\n")
+    print(f"Completed in {elapsed_time:.3f}s\n")
 
 if __name__ == "__main__":
     main()

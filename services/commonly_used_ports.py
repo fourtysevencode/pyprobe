@@ -21,5 +21,6 @@ popular_services_on_port = {
     6379: "Redis In-Memory Database",
     3389: "Remote Desktop Protocol (RDP)",
     5432: "PostgreSQL Database Server",
-    9929: "Nping Echo Protocol"
+    9929: "Nping Echo Protocol",
+    8021: "FTP Proxy on MacOS"
 }
