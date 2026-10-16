@@ -15,9 +15,7 @@ ascii_art = r"""
   \ \  \___|\/   / /   \ \  \___|\ \  \\  \\ \  \\\  \ \  \|\  \ \  \_|\ \ 
    \ \__\ __/   / /     \ \__\    \ \__\\ _\\ \_______\ \_______\ \_______\
     \|__||\____/ /       \|__|     \|__|\|__|\|_______|\|_______|\|_______|
-         \|____|/                                                          
-                                                                           
-                                                                           
+         \|____|/                                                                                                              
 """
 
 async def scan(IP):
@@ -48,7 +46,7 @@ def main():
     print(df.to_string(index=False))
     print(f"\nNumber of ports open: {total_open_ports}")
     print(f"Scan took {elapsed_time:.3f}s\n")
-    
+
 if __name__ == "__main__":
     main()
 
