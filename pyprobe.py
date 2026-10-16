@@ -55,7 +55,7 @@ def main():
     print(f"Completed in {elapsed_time:.3f}s\n")
 
     if json_export:
-        file_name = f"PYPROBE-{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.json"
+        file_name = f"PYPROBE-{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.json"
         df.to_json(file_name, indent=4)
         rich_print(f"Saved to [green]{file_name}[/green]")
 

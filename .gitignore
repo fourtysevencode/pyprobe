@@ -6,3 +6,7 @@ __pycache__
 
 # MacOS DS_Store
 .DS_Store
+
+# Build and Spec files
+build
+pyprobe.spec
