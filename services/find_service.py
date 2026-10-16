@@ -34,7 +34,7 @@ def find_service_from_port(IP, PORT):
                 
                 return banner.decode(errors='ignore')
         except Exception as e:
-            return f"unknown Exception: {e}"
+            return f"Unknown | {e}"
 
 def main():
     find_service_from_port("127.0.0.1", 8000)
