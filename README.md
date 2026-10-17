@@ -75,7 +75,19 @@ pyprobe-scan 127.0.0.1 -j
 
 The scan results are saved to a timestamped JSON file in the current working directory.
 
-Run directly from source
+Enable verbose logging:
+
+```bash
+pyprobe-scan 127.0.0.1 -v
+```
+
+Set a timeout on each TCP connection:
+
+```bash
+pyprobe-scan 127.0.0.1 -t 3 # Default is 3s
+```
+
+### Run directly from source
 
 If you haven't installed the package yet, run it from the repository root:
 
