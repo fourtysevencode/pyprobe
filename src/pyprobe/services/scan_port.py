@@ -3,9 +3,9 @@ from .commonly_used_ports import ports
 
 target = "127.0.0.1" # ESP32 with a webpage hosted on port 80
 
-def scan_port(target, port):
+def scan_port(target, port,timeout):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.settimeout(5)
+        sock.settimeout(timeout)
         result = sock.connect_ex((target, port))
 
     if result == 0:
