@@ -10,3 +10,6 @@ __pycache__
 # Build and Spec files
 build
 pyprobe.spec
+
+# Python package files
+pyprobe_scan.egg-info

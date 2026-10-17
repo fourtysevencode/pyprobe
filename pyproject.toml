@@ -1,0 +1,50 @@
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyprobe-scan"
+version = "0.1.0"
+description = "A Python network probing and asynchronous port scanning tool"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Ronak Pal" }
+]
+dependencies = [
+    "pandas",
+    "rich",
+    "rich-tools",
+]
+
+keywords = [
+    "networking",
+    "port-scanner",
+    "network-probing",
+    "service-detection",
+    "cybersecurity",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.15",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Networking",
+]
+
+[project.scripts]
+pyprobe-scan = "pyprobe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
