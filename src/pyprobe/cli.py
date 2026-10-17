@@ -15,7 +15,10 @@ def main():
 
     df = asyncio.run(scan(target,timeout,verbose_status))
 
-    print_results(df)
+    if type(df) == str:
+        rich_print(f"[red]{df}[/red]")
+    else:
+        print_results(df)
 
     elapsed_time = time.perf_counter() - start_time
     rich_print(f"Completed in {elapsed_time:.3f}s\n")

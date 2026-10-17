@@ -27,7 +27,11 @@ async def scan(IP,timeout,verbose_status):
         rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time}\n")
 
     tasks = [asyncio.to_thread(scan_port,IP,port,timeout,verbose_status) for port in ports] # list of tasks to be run asynchronously
-    result = await asyncio.gather(*tasks) # fire all tasks
+
+    try:
+        result = await asyncio.gather(*tasks) # fire all tasks
+    except Exception as e:
+        return "An error occured. Provide a valid IPv4 target address."
 
     open_ports = [port for port in result if port is not None]
 

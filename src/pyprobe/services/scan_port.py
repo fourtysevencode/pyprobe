@@ -7,7 +7,7 @@ def scan_port(target, port,timeout=3,verbose_status=False):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.settimeout(timeout)
         result = sock.connect_ex((target, port))
-
+    
     if result == 0:
         if verbose_status:
             print(f"{port}: Open")
