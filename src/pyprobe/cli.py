@@ -11,9 +11,9 @@ from .output import print_results, save_json
 def main():
     start_time = time.perf_counter()
 
-    target, json_export, timeout = get_args()
+    target, json_export, timeout, verbose_status = get_args()
 
-    df = asyncio.run(scan(target,timeout))
+    df = asyncio.run(scan(target,timeout,verbose_status))
 
     print_results(df)
 

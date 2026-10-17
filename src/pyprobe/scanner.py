@@ -17,13 +17,16 @@ ascii_art = r"""
          \|____|/                                                                                                              
 """
 
-async def scan(IP,timeout):
+async def scan(IP,timeout,verbose_status):
     rich_print(ascii_art)
     current_clock_time = datetime.now().strftime("%H:%M:%S")
 
-    rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time}\n")
+    if verbose_status:
+        rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time} with verbose logging. \n")
+    else:
+        rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time}\n")
 
-    tasks = [asyncio.to_thread(scan_port,IP,port,timeout) for port in ports] # list of tasks to be run asynchronously
+    tasks = [asyncio.to_thread(scan_port,IP,port,timeout,verbose_status) for port in ports] # list of tasks to be run asynchronously
     result = await asyncio.gather(*tasks) # fire all tasks
 
     open_ports = [port for port in result if port is not None]

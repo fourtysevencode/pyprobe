@@ -3,13 +3,14 @@ from .commonly_used_ports import ports
 
 target = "127.0.0.1" # ESP32 with a webpage hosted on port 80
 
-def scan_port(target, port,timeout):
+def scan_port(target, port,timeout=3,verbose_status=False):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.settimeout(timeout)
         result = sock.connect_ex((target, port))
 
     if result == 0:
-        #print(f"{port}: Open")
+        if verbose_status:
+            print(f"{port}: Open")
         return port
 
     return None
