@@ -23,7 +23,7 @@ Install from PyPI
 install it with:
 
 ```bash
-python -m pip install pyprobe-scan
+pip install pyprobe-scan
 ```
 
 Install from source
