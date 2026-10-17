@@ -1,8 +1,8 @@
 import requests
 import socket
 
-from services.commonly_used_ports import (popular_http_ports,popular_services_on_port)
-from services.common_service_signatures import service_signatures
+from .commonly_used_ports import (popular_http_ports,popular_services_on_port)
+from .common_service_signatures import service_signatures
 
 
 def find_service_from_port(IP, PORT):
