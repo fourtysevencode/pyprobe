@@ -45,8 +45,6 @@ Install the project in editable mode:
 python -m pip install -e .
 ```
 
-Note: The repository URL and PyPI installation instructions assume the project is published under these names. Update them if your repository or package name differs.
-
 ## Usage
 
 Display help
