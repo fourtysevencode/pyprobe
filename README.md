@@ -9,8 +9,9 @@ Pyprobe is a command-line tool and Python package for scanning TCP ports, identi
 | **Asynchronous Scanning** | Uses `asyncio` and `asyncio.to_thread()` to scan multiple ports concurrently. |
 | **TCP Port Scanning** | Identifies accessible TCP ports on a target host. |
 | **Service Detection** | Attempts to identify services using port mappings and service signatures. |
-| **Terminal Output** | Displays scan results in a formatted table using Rich. |
+| **Terminal Output** | Displays scan results in a formatted table using Rich. Use `-v` for verbose logging. |
 | **JSON Export** | Saves discovered ports and service information to a JSON file. |
+| **Custom Timeouts** | Set a custom timeout for each TCP connection |
 | **CLI and Python API** | Designed for terminal use and integration into Python programs. |
 
 ## Installation
@@ -67,7 +68,7 @@ Export results to JSON
 pyprobe-scan 127.0.0.1 --json
 ```
 
-The short form is also available:
+The short form is also available (applicable to all commands use -h to view):
 
 ```bash
 pyprobe-scan 127.0.0.1 -j
@@ -95,9 +96,9 @@ If you haven't installed the package yet, run it from the repository root:
 PYTHONPATH=src python -m pyprobe 127.0.0.1
 ```
 
-Using PyProbe in Python
+Using Pyprobe e in Python
 
-PyProbe is also designed to be imported into your own Python projects.
+Pyprobe is also designed to be imported into your own Python projects.
 
 ```python
 import asyncio
