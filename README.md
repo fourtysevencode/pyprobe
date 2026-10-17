@@ -50,6 +50,7 @@ python -m pip install -e .
 
 ## Project Structure
 ```
+pyprobe
 ├── docs
 │   └── demo-screenshots
 │       └── dummy-help-scan.png
@@ -147,3 +148,10 @@ results = asyncio.run(scan("127.0.0.1"))
 print(results)
 print(f"Open ports found: {len(results)}")
 ```
+
+## Credits
+Shipped to [Hack Club Crescent](https://crescent.hackclub.com) 2026
+
+<img src='https://hackatime.hackclub.com/api/v1/badge/U0BJ7PF47LJ/fourtysevencode/pyprobe'></img>
+
+_made with 💗 from fourtysevencode_
