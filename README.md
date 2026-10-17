@@ -48,6 +48,30 @@ Install the project in editable mode:
 python -m pip install -e .
 ```
 
+## Project Structure
+```
+├── docs
+│   └── demo-screenshots
+│       └── dummy-help-scan.png
+├── src
+│   └── pyprobe
+│       ├── services
+│       │   ├── __init__.py
+│       │   ├── common_service_signatures.py
+│       │   ├── commonly_used_ports.py
+│       │   ├── find_service.py
+│       │   └── scan_port.py
+│       ├── __init.py
+│       ├── __main__.py
+│       ├── cli_args.py
+│       ├── cli.py
+│       ├── output.py
+│       └── scanner.py
+├── .gitignore
+├── pyproject.toml
+└── README.md
+```
+
 ## Usage
 
 Display help
