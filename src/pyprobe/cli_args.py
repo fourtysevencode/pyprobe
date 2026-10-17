@@ -4,7 +4,7 @@ def get_args():
 
     parser = argparse.ArgumentParser(
         prog = "pyprobe",
-        description="Run port scans",
+        description="Pyprobe is a command-line tool and Python package for scanning TCP ports, identifying potentially running services, and exporting scan results to JSON. Built from scratch using Python's socket and concurrency capabilities, it aims to make network reconnaissance accessible through both a CLI and a reusable Python API.",
         epilog="Placeholder"
     )
 
