@@ -160,7 +160,10 @@ const char* password = "-";
 ```
 
 You will get the following output:
+
 <img src='docs/ESP_Demo/pic.jpeg' style="max-width: 70%; height: auto;"></img>
+
+_the tiny hair is from my dog Maple, who is snuggled up beside me as I write this_
 
 
 ## Credits
