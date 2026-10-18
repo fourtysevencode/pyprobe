@@ -6,26 +6,9 @@ from .services.find_service import find_service_from_port
 from .services.scan_port import scan_port
 from .services.commonly_used_ports import ports
 
-ascii_art = r"""
- ________  ___    ___ ________  ________  ________  ________  _______      
-|\   __  \|\  \  /  /|\   __  \|\   __  \|\   __  \|\   __  \|\  ___ \     
-\ \  \|\  \ \  \/  / | \  \|\  \ \  \|\  \ \  \|\  \ \  \|\ /\ \   __/|    
- \ \   ____\ \    / / \ \   ____\ \   _  _\ \  \\\  \ \   __  \ \  \_|/__  
-  \ \  \___|\/   / /   \ \  \___|\ \  \\  \\ \  \\\  \ \  \|\  \ \  \_|\ \ 
-   \ \__\ __/   / /     \ \__\    \ \__\\ _\\ \_______\ \_______\ \_______\
-    \|__||\____/ /       \|__|     \|__|\|__|\|_______|\|_______|\|_______|
-         \|____|/                                                                                                              
-"""
 
-async def scan(IP,timeout,verbose_status):
-    rich_print(ascii_art)
-    current_clock_time = datetime.now().strftime("%H:%M:%S")
 
-    if verbose_status:
-        rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time} with verbose logging. \n")
-    else:
-        rich_print(f"Starting async port scan against [yellow]{IP}[/yellow] at {current_clock_time}\n")
-
+async def scan(IP,timeout = 3,verbose_status = False):
     tasks = [asyncio.to_thread(scan_port,IP,port,timeout,verbose_status) for port in ports] # list of tasks to be run asynchronously
 
     try:

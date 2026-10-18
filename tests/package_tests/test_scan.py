@@ -1,0 +1,22 @@
+import asyncio
+from pyprobe.scanner import scan
+
+async def security_audit():
+    target_ip = "127.0.0.1"
+    print(f"Starting asynchronous scan on {target_ip}...")
+    
+    # Run the async scan loop natively
+    results_df = await scan(target_ip)
+    
+    if results_df.empty:
+        print("No open ports found.")
+        return
+
+    print("\nScan Results Summary:")
+    print(results_df)
+    print(type(results_df))
+
+    # Leverage Pandas to immediately filter out unsafe ports
+
+# Execute the async application
+asyncio.run(security_audit())
