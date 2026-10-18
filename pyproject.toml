@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyprobe-scan"
-version = "0.1.3"
+version = "0.1.4"
 description = "A Python network probing and asynchronous port scanning tool"
 readme = "README.md"
 requires-python = ">=3.10"
