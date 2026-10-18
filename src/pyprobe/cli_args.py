@@ -15,6 +15,9 @@ def get_args():
     parser.add_argument("-t", "--timeout", type=int, default=3, help="Set time duration before connection timeouts, default is 3s.")
 
     parser.add_argument("-v", "--verbose", action="store_true", help='Enable verbose logging.')
+
+    parser.add_argument('-p', '--ports', type=int, nargs='+', help='Specific ports to scan')
+
     args = parser.parse_args()
 
-    return args.target, args.json, args.timeout, args.verbose
+    return args.target, args.json, args.timeout, args.verbose, args.ports

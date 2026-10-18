@@ -6,7 +6,7 @@ async def security_audit():
     print(f"Starting asynchronous scan on {target_ip}...")
     
     # Run the async scan loop natively
-    results_df = await scan(target_ip)
+    results_df = await scan(target_ip, specific_ports=[7000])
     
     if results_df.empty:
         print("No open ports found.")

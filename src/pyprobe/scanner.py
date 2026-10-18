@@ -8,8 +8,12 @@ from .services.commonly_used_ports import ports
 
 
 
-async def scan(IP,timeout = 3,verbose_status = False):
-    tasks = [asyncio.to_thread(scan_port,IP,port,timeout,verbose_status) for port in ports] # list of tasks to be run asynchronously
+async def scan(IP,timeout = 3,verbose_status = False, specific_ports:list[int] = ports):
+
+    if specific_ports is None or len(specific_ports) < 1:
+        specific_ports = ports
+    
+    tasks = [asyncio.to_thread(scan_port,IP,port,timeout,verbose_status) for port in specific_ports] # list of tasks to be run asynchronously
 
     try:
         result = await asyncio.gather(*tasks) # fire all tasks

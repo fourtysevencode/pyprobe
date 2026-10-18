@@ -13,6 +13,7 @@ Pyprobe is a command-line tool and Python package for scanning TCP ports, identi
 | **Service Detection** | Attempts to identify services using port mappings and service signatures. |
 | **Terminal Output** | Displays scan results in a formatted table using Rich. Use `-v` for verbose logging. |
 | **JSON Export** | Saves discovered ports and service information to a JSON file. |
+| **Specific Port Scanning** | Scan specific ports on the target with `-p` |
 | **Custom Timeouts** | Set a custom timeout for each TCP connection |
 | **CLI and Python API** | Designed for terminal use and integration into Python programs. |
 
@@ -113,6 +114,12 @@ Set a timeout on each TCP connection:
 
 ```bash
 pyprobe-scan 127.0.0.1 -t 3 # Default is 3s
+```
+
+Scan specific ports on the server
+
+```bash
+pyprobe-scan 127.0.0.1 -p 80 443 # Scans port 80 and 443
 ```
 
 ### Run directly from source
