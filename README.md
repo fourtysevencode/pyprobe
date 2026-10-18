@@ -176,6 +176,6 @@ _the tiny hair is from my dog Maple, who is snuggled up beside me as I write thi
 ## Credits
 Shipped to [Hack Club Crescent](https://crescent.hackclub.com) 2026
 
-<img src='https://hackatime.hackclub.com/api/v1/badge/U0BJ7PF47LJ/fourtysevencode/pyprobe'></img>
+<img src='https://hackatime.hackclub.com/api/v1/badge/U0BJ7PF47LJ/fourtysevencode/pyprobe'>
 
 _made with 💗 from fourtysevencode_
