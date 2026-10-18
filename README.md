@@ -149,6 +149,20 @@ print(results)
 print(f"Open ports found: {len(results)}")
 ```
 
+## Testing
+If you don't have a server to run test scans against, you may use the ESP32 sketch in `tests/Dummy_ESP32_Server' to host one on your ESP32.
+
+Replace the hyphens with your WiFi network's SSID and password.
+
+```c++
+const char* ssid = "-";
+const char* password = "-";
+```
+
+You will get the following output:
+<img src='docs/ESP_Demo/pic.jpeg' style="max-width: 70%; height: auto;"></img>
+
+
 ## Credits
 Shipped to [Hack Club Crescent](https://crescent.hackclub.com) 2026
 
