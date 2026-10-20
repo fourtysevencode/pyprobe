@@ -25,14 +25,15 @@ def main():
 
     start_time = time.perf_counter()
 
-    target, json_export, timeout, verbose_status, selected_ports = get_args()
+    target, json_export, timeout, verbose_status, selected_ports, syn_scan = get_args()
 
-    if verbose_status:
-        rich_print(f"Starting async port scan against [yellow]{target}[/yellow] at {current_clock_time} with verbose logging. \n")
-    else:
-        rich_print(f"Starting async port scan against [yellow]{target}[/yellow] at {current_clock_time}\n")
+    syn_scan_text = "SYN" if syn_scan else ""
 
-    df = asyncio.run(scan(target,timeout,verbose_status, selected_ports))
+    verbose_status_text = "with verbose logging." if verbose_status else ""
+    
+    rich_print(f"Starting async {syn_scan_text} port scan against [yellow]{target}[/yellow] at {current_clock_time} {verbose_status_text} \n")
+
+    df = asyncio.run(scan(target,timeout,verbose_status, selected_ports,syn_scan))
 
     if type(df) == str:
         rich_print(f"[red]{df}[/red]")

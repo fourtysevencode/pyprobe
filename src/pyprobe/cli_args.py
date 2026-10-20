@@ -18,6 +18,7 @@ def get_args():
 
     parser.add_argument('-p', '--ports', type=int, nargs='+', help='Specific ports to scan')
 
+    parser.add_argument("-sS", "--SYN_SCAN",action="store_true",default=False, help="Use SYN scanning")
     args = parser.parse_args()
 
-    return args.target, args.json, args.timeout, args.verbose, args.ports
+    return args.target, args.json, args.timeout, args.verbose, args.ports, args.SYN_SCAN
