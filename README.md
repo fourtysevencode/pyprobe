@@ -53,26 +53,38 @@ python -m pip install -e .
 ## Project Structure
 ```
 pyprobe
-├── docs
-│   └── demo-screenshots
-│       └── dummy-help-scan.png
-├── src
-│   └── pyprobe
-│       ├── services
+├── dist/
+│   ├── pyprobe_scan-0.1.6-py3-none-any.whl
+│   └── pyprobe_scan-0.1.6.tar.gz
+├── docs/
+│   ├── demo-screenshots/
+│   │   └── dummy-help-scan.png
+│   └── ESP_Demo/
+│       └── pic.jpeg
+├── src/
+│   └── pyprobe/
+│       ├── services/
 │       │   ├── __init__.py
 │       │   ├── common_service_signatures.py
 │       │   ├── commonly_used_ports.py
 │       │   ├── find_service.py
-│       │   └── scan_port.py
+│       │   ├── scan_port.py
+│       │   └── syn_scan.py
 │       ├── __init__.py
 │       ├── __main__.py
 │       ├── cli_args.py
 │       ├── cli.py
 │       ├── output.py
 │       └── scanner.py
+├── tests/
+│   ├── Dummy_ESP32_Server/
+│   │   └── Dummy_ESP32_Server.ino
+│   └── package_tests/
+│       └── test_scan.py
 ├── .gitignore
 ├── pyproject.toml
 └── README.md
+
 ```
 
 ## Usage
