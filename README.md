@@ -149,7 +149,7 @@ If you haven't installed the package yet, run it from the repository root:
 PYTHONPATH=src python -m pyprobe 127.0.0.1
 ```
 
-Using Pyprobe e in Python
+Using Pyprobe in Python
 
 Pyprobe is also designed to be imported into your own Python projects.
 
