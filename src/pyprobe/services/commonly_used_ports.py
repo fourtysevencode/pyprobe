@@ -11,16 +11,120 @@ popular_http_ports = [
 ]
 # Common Port to Service Mapping
 popular_services_on_port = {
+    # File transfer
+    20: "FTP (Data Transfer)",
     21: "FTP (File Transfer Protocol)",
     22: "SSH (Secure Shell)",
+    69: "TFTP (Trivial File Transfer Protocol)",
+    115: "SFTP (Simple File Transfer Protocol)",
+
+    # Remote access
     23: "Telnet",
+    3389: "RDP (Remote Desktop Protocol)",
+    5900: "VNC (Virtual Network Computing)",
+    5901: "VNC Display 1",
+    2222: "Alternate SSH / Custom SSH Service",
+
+    # Mail
     25: "SMTP (Simple Mail Transfer Protocol)",
+    110: "POP3 (Post Office Protocol v3)",
+    143: "IMAP (Internet Message Access Protocol)",
+    465: "SMTPS (SMTP over TLS)",
+    587: "SMTP Submission",
+    993: "IMAPS (IMAP over TLS)",
+    995: "POP3S (POP3 over TLS)",
+
+    # DNS and network services
     53: "DNS (Domain Name System)",
+    67: "DHCP Server",
+    68: "DHCP Client",
+    123: "NTP (Network Time Protocol)",
+    161: "SNMP (Simple Network Management Protocol)",
+    162: "SNMP Trap",
+    514: "Syslog",
+    520: "RIP (Routing Information Protocol)",
+    631: "IPP (Internet Printing Protocol)",
+
+    # Web servers and proxies
     80: "HTTP (Hypertext Transfer Protocol)",
     443: "HTTPS (HTTP Secure / TLS)",
-    6379: "Redis In-Memory Database",
-    3389: "Remote Desktop Protocol (RDP)",
+    8080: "HTTP Alternate / Web Proxy",
+    8443: "HTTPS Alternate",
+    8000: "HTTP Development Server",
+    8008: "HTTP Alternate",
+    8888: "HTTP Alternate / Jupyter",
+    3000: "Development Server (Commonly Node.js)",
+    5000: "Development Server (Commonly Flask)",
+    5173: "Vite Development Server",
+    9000: "Development Server / Web Service",
+    9090: "Web Service / Monitoring Dashboard",
+
+    # Databases
+    1433: "Microsoft SQL Server",
+    1521: "Oracle Database",
+    3306: "MySQL Database",
     5432: "PostgreSQL Database Server",
+    5984: "CouchDB",
+    6379: "Redis In-Memory Database",
+    7000: "Cassandra / Custom Service",
+    9042: "Apache Cassandra",
+    9200: "Elasticsearch HTTP API",
+    9300: "Elasticsearch Transport",
+    27017: "MongoDB",
+    27018: "MongoDB Shard Server",
+    11211: "Memcached",
+
+    # File sharing and directory services
+    111: "RPCBind / Portmapper",
+    139: "NetBIOS Session Service",
+    445: "SMB (Server Message Block)",
+    2049: "NFS (Network File System)",
+    389: "LDAP (Lightweight Directory Access Protocol)",
+    636: "LDAPS (LDAP over TLS)",
+    3268: "Microsoft Global Catalog",
+    3269: "Microsoft Global Catalog over TLS",
+
+    # Authentication and infrastructure
+    88: "Kerberos Authentication",
+    464: "Kerberos Password Change",
+    1812: "RADIUS Authentication",
+    1813: "RADIUS Accounting",
+    2375: "Docker API (Unencrypted)",
+    2376: "Docker API (TLS)",
+    6443: "Kubernetes API Server",
+    10250: "Kubelet API",
+    8500: "Consul HTTP API",
+    8600: "Consul DNS",
+
+    # Messaging and streaming
+    1883: "MQTT (Message Queuing Telemetry Transport)",
+    8883: "MQTT over TLS",
+    5672: "RabbitMQ AMQP",
+    15672: "RabbitMQ Management UI",
+    9092: "Apache Kafka",
+    61616: "Apache ActiveMQ",
+
+    # Monitoring and administration
     9929: "Nping Echo Protocol",
-    8021: "FTP Proxy on MacOS"
+    10050: "Zabbix Agent",
+    10051: "Zabbix Server",
+    9100: "Prometheus Node Exporter (Common Default)",
+    3001: "Development Server / Custom Service",
+    4040: "Spark UI (Common Default)",
+
+    # macOS / FTP proxy
+    8021: "FTP Proxy on macOS (Reported Common Use)",
+
+    # Virtualization and container platforms
+    2377: "Docker Swarm Management",
+    7946: "Docker Swarm Node Communication",
+    4789: "Docker Overlay Network (VXLAN)",
+    50000: "Jenkins Agent / Custom Service",
+
+    # Game servers and miscellaneous
+    25565: "Minecraft Java Edition Server",
+    19132: "Minecraft Bedrock Edition Server (UDP)",
+    27015: "Source Engine Game Server",
+    6667: "IRC (Internet Relay Chat)",
+    6881: "BitTorrent (Common Port)",
 }

@@ -42,6 +42,7 @@ def main():
 
     elapsed_time = time.perf_counter() - start_time
     rich_print(f"Completed in {elapsed_time:.3f}s\n")
+    rich_print("Report any errors or mismatched results to [yellow]https://github.com/fourtysevencode/pyprobe[/yellow]")
 
     if json_export:
         save_json(df)
