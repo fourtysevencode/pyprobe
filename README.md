@@ -1,5 +1,7 @@
 # Pyprobe
 
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/pyprobe-scan?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/pyprobe-scan)
+
 Pyprobe is a command-line tool and Python package for scanning TCP ports, identifying potentially running services, and exporting scan results to JSON. Built from scratch using Python's socket and concurrency capabilities, it aims to make network reconnaissance accessible through both a CLI and a reusable Python API.
 
 <img src="docs/demo-screenshots/dummy-help-scan.png" style="max-width: 80%; height: auto;"></img>
