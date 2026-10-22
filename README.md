@@ -140,8 +140,9 @@ pyprobe-scan 127.0.0.1 -p 80 443 # Scans port 80 and 443
 Use SYN scanning
 
 ```bash
-pyprobe-scan 127.0.0.1 -sS
+sudo pyprobe-scan 127.0.0.1 -sS
 ```
+Requires elevated permissions
 
 ### Run directly from source
 
