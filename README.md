@@ -150,7 +150,7 @@ Feel free to point out any problems, potential problems or suggestions by creati
 
 Usage of AI coding agents to create automated PRs is discouraged but you are free to use AI to learn how the codebase works and write the code yourself. 
 
-### Run directly from source
+## Run directly from source
 
 If you haven't installed the package yet, run it from the repository root:
 
