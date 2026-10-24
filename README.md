@@ -144,6 +144,12 @@ sudo pyprobe-scan 127.0.0.1 -sS
 ```
 Requires elevated permissions
 
+## Contributing
+
+Feel free to point out any problems, potential problems or suggestions by creating an issue here. PRs are welcome as well as long as they document the changes made, features added along with how they function sufficiently.
+
+Usage of AI coding agents to create automated PRs is discouraged but you are free to use AI to learn how the codebase works and write the code yourself. 
+
 ### Run directly from source
 
 If you haven't installed the package yet, run it from the repository root:
@@ -194,9 +200,17 @@ You will get the following output:
 
 _the tiny hair is from my dog Maple, who is snuggled up beside me as I write this_
 
+## Contact
+
+If you have any questions, feedback or anything else, feel free to reachout!
+
+[Discord](https://discord.com/users/1388765935996895284), [Website](https://ronakbuilds.tech/)
 
 ## Credits
+
 Shipped to [Hack Club Crescent](https://crescent.hackclub.com) 2026
+
+This project was written with almost no help from generative AI (part of my personal AI Detox)
 
 <img src='https://hackatime.hackclub.com/api/v1/badge/U0BJ7PF47LJ/fourtysevencode/pyprobe'>
 
