@@ -64,8 +64,8 @@ python -m pip install -e .
 ```
 pyprobe
 ├── dist/
-│   ├── pyprobe_scan-0.1.6-py3-none-any.whl
-│   └── pyprobe_scan-0.1.6.tar.gz
+│   ├── pyprobe_scan-0.1.70-py3-none-any.whl
+│   └── pyprobe_scan-0.1.70.tar.gz
 ├── docs/
 │   ├── demo-screenshots/
 │   │   └── dummy-help-scan.png
