@@ -29,6 +29,9 @@ install it with:
 ```bash
 pip install pyprobe-scan
 ```
+(Ensure youre downloading the latest version that is 0.1.70 as of now with the ==0.1.70)
+
+All the dependencies are in the project's metadata and should install automatically but if you run into a `ModuleNotFoundError` you can try installing it manually, retrying the installation on a venv or trying the installation from source.
 
 Install from source
 
