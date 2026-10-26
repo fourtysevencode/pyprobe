@@ -24,14 +24,19 @@ Pyprobe is a command-line tool and Python package for scanning TCP ports, identi
 
 Install from PyPI
 
-install it with:
+Install it with:
 
 ```bash
 pip install pyprobe-scan
 ```
-(Ensure youre downloading the latest version that is 0.1.70 as of now with the ==0.1.70)
 
-All the dependencies are in the project's metadata and should install automatically but if you run into a `ModuleNotFoundError` you can try installing it manually, retrying the installation on a venv or trying the installation from source.
+To install a specific version use:
+
+```bash
+pip install pyprobe-scan==0.1.70
+```
+
+The required dependencies are declared in pyproject.toml and should be installed automatically by pip. If you encounter an import error, first verify that you're using the expected Python environment and that the package installed correctly.
 
 Install from source
 
