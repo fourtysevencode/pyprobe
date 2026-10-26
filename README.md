@@ -30,7 +30,7 @@ Install it with:
 pip install pyprobe-scan
 ```
 
-To install a specific version use:
+To install a specific version use: (Recommended)
 
 ```bash
 pip install pyprobe-scan==0.1.70
